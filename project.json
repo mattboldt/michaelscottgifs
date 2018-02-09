@@ -1,0 +1,8 @@
+{
+  "name": "michaelscottgifs",
+  "description": "Gifs of Michael Scott",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::387898560055:role/michaelscottgifs_lambda_function",
+  "environment": {}
+}
