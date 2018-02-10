@@ -48,6 +48,9 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.APP.API_URL = 'https://nkmi8emuul.execute-api.us-east-1.amazonaws.com/prod/michaelscottgifs_MichaelScott';
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-11539016-8'
+    };
   }
 
   return ENV;
