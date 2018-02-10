@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import config from '../config/environment';
 import { bind } from '@ember/runloop';
 import $ from 'jquery';
 
@@ -6,7 +7,7 @@ export default Component.extend({
 
   currentImage: '',
   searchQuery: '',
-  apiUrl: 'https://nkmi8emuul.execute-api.us-east-1.amazonaws.com/prod/michaelscottgifs_MichaelScott',
+  apiUrl: config.API_URL,
 
   loadImage: function() {
     const url = this.get('apiUrl') + '?query=' + this.get('searchQuery') + '&limit=5';

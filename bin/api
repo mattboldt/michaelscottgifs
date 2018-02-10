@@ -1,0 +1,1 @@
+cd ./functions/MichaelScott && sam local start-api
