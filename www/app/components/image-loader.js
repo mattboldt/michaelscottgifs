@@ -6,7 +6,7 @@ export default Component.extend({
 
   currentImage: '',
   searchQuery: '',
-  apiUrl: 'http://127.0.0.1:3000/',
+  apiUrl: 'https://nkmi8emuul.execute-api.us-east-1.amazonaws.com/prod/michaelscottgifs_MichaelScott',
 
   loadImage: function() {
     const url = this.get('apiUrl') + '?query=' + this.get('searchQuery') + '&limit=5';
