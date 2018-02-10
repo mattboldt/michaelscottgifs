@@ -36,7 +36,7 @@ module.exports = function(environment) {
           // Ensure development env hits aren't sent to GA
           sendHitTask: environment !== 'development',
           // Specify Google Analytics plugins
-          require: ['ecommerce']
+          require: ['']
         }
       }
     ]
