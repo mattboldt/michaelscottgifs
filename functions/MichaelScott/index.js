@@ -1,7 +1,7 @@
-const fs = require('fs')
-      path = require('path')
-      Search = require('search.js');
-      // ImageParse = require('imageParse.js');
+const fs = require('fs');
+const path = require('path');
+const Search = require('search.js');
+// const ImageParse = require('imageParse.js');
 
 exports.handle = (e, context, callback) => {
   console.log('processing event: %j', e);

@@ -7,7 +7,7 @@ export default Component.extend({
 
   currentImage: '',
   searchQuery: '',
-  apiUrl: config.API_URL,
+  apiUrl: config.APP.API_URL,
 
   loadImage: function() {
     const url = this.get('apiUrl') + '?query=' + this.get('searchQuery') + '&limit=5';
