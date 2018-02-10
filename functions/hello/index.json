@@ -1,41 +1,41 @@
 [
   {
-    "title": "Michael Scott oh god no",
-    "url": "https://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif",
+    "titles": ["Michael Scott oh god no"],
+    "url": "https://media.giphy.com/media/l4pTlkRchniNjbdcI/giphy.gif",
     "tags": ["oh god no"]
   },
   {
-    "title": "Awkward Michael Scott",
+    "titles": ["Awkward Michael Scott"],
     "url": "https://media.giphy.com/media/jOpLbiGmHR9S0/giphy.gif",
     "tags": ["reaction", "awkward", "biting lip"]
   },
   {
-    "title": "Michael Scott don't like that",
+    "titles": ["Michael Scott don't like that"],
     "url": "https://media.giphy.com/media/4cuyucPeVWbNS/giphy.gif",
     "tags": ["don't like that"]
   },
   {
-    "title": "why don't you explain this to me like I'm five",
+    "titles": ["why don't you explain this to me like I'm five"],
     "url": "https://media.giphy.com/media/5wWf7H89PisM6An8UAU/giphy.gif",
     "tags": ["eli5", "explain like I'm five", "explain like I'm 5"]
   },
   {
-    "title": "Michael Scott willy wonka thank you",
+    "titles": ["Michael Scott willy wonka thank you"],
     "url": "https://media.giphy.com/media/1Z02vuppxP1Pa/giphy.gif",
     "tags": ["willy wonka", "wonka", "thank you"]
   },
   {
-    "title": "Michael Scott I will kill you",
+    "titles": ["Michael Scott I will kill you"],
     "url": "https://media.giphy.com/media/4DKJDEsK22SR2/giphy.gif",
     "tags": ["I will kill you", "threatening toby", "toby exit interview"]
   },
   {
-    "title": "Is there a god",
+    "titles": ["Is there a god"],
     "url": "https://media.giphy.com/media/5xtDarCNXLUYnPqkuBO/giphy.gif",
-    "tags": ["is there a god", "who is jesus' dad", "what are all these chruches for"]
+    "tags": ["is there a god", "who is jesus' dad", "what are all these churches for"]
   },
   {
-    "title": "Why are you the way that you are",
+    "titles": ["Why are you the way that you are"],
     "url": "https://media.giphy.com/media/3kIcyN7fUtlUA/giphy.gif",
     "tags": ["toby is awful", "why are you the way that you are", "every time I want to do something fun, you make it not that way"]
   }

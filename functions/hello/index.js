@@ -6,7 +6,7 @@ const responseBody = (body) => {
   return {
     isBase64Encoded: false,
     statusCode: 200,
-    headers: {},
+    headers: {'Access-Control-Allow-Origin': '*'},
     body: JSON.stringify(body)
   };
 }
@@ -20,7 +20,7 @@ const searchOptions = () => {
     maxPatternLength: 32,
     minMatchCharLength: 1,
     keys: [
-      'title',
+      'titles',
       'tags'
     ]
   };
