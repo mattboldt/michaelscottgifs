@@ -11,6 +11,8 @@ module.exports = class Search {
   get searchOptions(){
     return {
       shouldSort: true,
+      tokenize: true,
+      includeScore: true,
       threshold: 0.6,
       location: 0,
       distance: 100,
@@ -27,7 +29,7 @@ module.exports = class Search {
     const min = 0;
     const max = this.json.length - 1;
     const num = Math.floor(Math.random() * max) + min;
-    return this.json[num];
+    return [this.json[num]];
   }
 
   responseBody(body){
@@ -41,18 +43,22 @@ module.exports = class Search {
 
   search(){
     let query = this.params.query || '';
+    let limit = this.params.limit || 1;
     if (query.length === 0) {
       return this.randomImage;
     }
 
     const fuse = new Fuse(this.json, this.searchOptions);
-    const result = fuse.search(query);
+    const results = fuse.search(query);
+    let relevantResults = results.slice(0, limit);
 
-    if (result.length === 0) {
+    if (relevantResults.length > 1) {
+      relevantResults = relevantResults.filter((r) => r.score < 1);
+    }
+    if (results.length === 0 || relevantResults.length === 0) {
       return this.randomImage;
     }
-
-    return result[0];
+    return relevantResults.map((r) => r.item);
   }
 
   getResults(){

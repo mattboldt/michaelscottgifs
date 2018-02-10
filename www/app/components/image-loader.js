@@ -9,9 +9,9 @@ export default Component.extend({
   apiUrl: 'http://127.0.0.1:3000/',
 
   loadImage: function() {
-    const url = this.get('apiUrl') + '?query=' + this.get('searchQuery');
-    $.getJSON(url).then((image) => {
-      bind(this, this.set('currentImage', image.url));
+    const url = this.get('apiUrl') + '?query=' + this.get('searchQuery') + '&limit=5';
+    $.getJSON(url).then((images) => {
+      bind(this, this.set('images', images));
     });
   },
 

@@ -3,4 +3,11 @@
   <button {{action "search"}}>search</button>
 </div>
 
-<img src={{currentImage}} width="350" />
+{{#each images as |image|}}
+<p>
+  <img src={{image.url}} width="350" /><br />
+  {{#each image.tags as |tag|}}
+    {{tag}}, 
+  {{/each}}
+</p>
+{{/each}}
