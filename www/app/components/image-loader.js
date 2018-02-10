@@ -9,13 +9,9 @@ export default Component.extend({
   searchQuery: '',
   apiUrl: config.APP.API_URL,
 
-  pageTitle: computed('query', function() {
-    const q = this.get('query');
-    if (q === 0) {
-      return "Michael Scott Gifs";
-    } else {
-      return "Michael Scott Gif search: " + q;
-    }
+  pageTitle: computed('images', function() {
+    const images = this.get('images');
+    return !images ? 'index' : images[0].tags.join(' | ');
   }),
 
   pageImageUrl: computed('images', function() {

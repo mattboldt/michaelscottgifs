@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'website',
     environment,
     rootURL: '/',
+    domain: 'https://michaelscottgifs.com',
+    siteName: 'MichaelScottGifs',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
