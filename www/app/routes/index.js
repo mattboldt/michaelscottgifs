@@ -7,8 +7,6 @@ export default Route.extend({
     const images = controller.get('images');
     // value of head tags updates with value of `era` on this
     // route's controller
-    console.log(images);
-    
     if (images) {
       return [
         {
