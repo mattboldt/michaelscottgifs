@@ -1,1 +1,4 @@
 cd ./www && ember build -prod -o=../docs
+cd ..
+touch ./docs/CNAME
+echo 'michaelscottgifs.com' > ./docs/CNAME
