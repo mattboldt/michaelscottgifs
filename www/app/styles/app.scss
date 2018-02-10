@@ -10,11 +10,16 @@ body {
 }
 
 .container {
-  max-width: 650px;
+  max-width: 750px;
 }
 
 div {
   margin: 20px auto;
+}
+
+img {
+  border: black 1px solid;
+  box-shadow: rgb(31, 31, 31) -3px 3px 0 0;
 }
 
 input, button {
