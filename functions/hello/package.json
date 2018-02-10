@@ -1,0 +1,27 @@
+{
+  "name": "michaelscottgifs",
+  "version": "1.0.0",
+  "description": "gifs of Michael Scott",
+  "main": "index.js",
+  "scripts": {
+    "test": "sam local start-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattboldt/michaelscottgifs.git"
+  },
+  "keywords": [
+    "michael",
+    "scott",
+    "gif"
+  ],
+  "author": "Matt Boldt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattboldt/michaelscottgifs/issues"
+  },
+  "homepage": "https://github.com/mattboldt/michaelscottgifs#readme",
+  "dependencies": {
+    "fuse.js": "^3.2.0"
+  }
+}
