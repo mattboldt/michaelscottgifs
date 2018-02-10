@@ -42,7 +42,7 @@ button {
   font-size: 24px;
 }
 
-input:focus {
+button:focus, input:focus {
   outline: rgb(160, 160, 255) 2px solid;
 }
 
