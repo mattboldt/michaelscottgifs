@@ -42,7 +42,7 @@ module.exports = class Search {
     let relevantResults = results.slice(0, limit);
 
     if (relevantResults.length > 1) {
-      relevantResults = relevantResults.filter((r) => r.score < 0.5);
+      relevantResults = relevantResults.filter((r) => r.score <= 0.55);
     }
     if (results.length === 0 || relevantResults.length === 0) {
       return this.randomImage;
