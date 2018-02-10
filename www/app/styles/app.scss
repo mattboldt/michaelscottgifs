@@ -1,0 +1,57 @@
+@import 'reset';
+@import 'simple-grid';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier';
+}
+
+.container {
+  max-width: 650px;
+}
+
+div {
+  margin: 20px auto;
+}
+
+input, button {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  font-family: 'Courier';
+  border: black 1px solid;
+  box-shadow: rgb(31, 31, 31) -3px 3px 0 0;
+}
+
+button {
+  background: rgb(192, 192, 192);
+}
+
+.btn, .search {
+  font-size: 24px;
+}
+
+input:focus {
+  outline: rgb(160, 160, 255) 2px solid;
+}
+
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.image-tag{
+  font-size: 10px;
+  background: #000;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+small {
+  font-size: 12px;
+}

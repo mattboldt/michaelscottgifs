@@ -1,13 +1,27 @@
+
+<div class="row">
+  <div class="col-9">
+    {{input value=searchQuery insert-newline="search" class="search" placeholder="Michael Scott Search"}}
+  </div>
+  <div class="col-3">
+    <button class="btn" {{action "search"}}>search</button>    
+  </div>
+</div>
+
 <div>
-  {{input value=searchQuery insert-newline="search"}}
-  <button {{action "search"}}>search</button>
+
 </div>
 
 {{#each images as |image|}}
-<p>
-  <img src={{image.url}} width="350" /><br />
-  {{#each image.tags as |tag|}}
-    {{tag}}, 
-  {{/each}}
-</p>
+  <div class="row">
+    <div class="col-12">
+      <img src={{image.url}} width="350" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      {{image-tags tags=image.tags}}
+      {{image-url value=image.url}}
+    </div>
+  </div>
 {{/each}}

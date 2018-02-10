@@ -9,8 +9,13 @@ export default Component.extend({
   searchQuery: '',
   apiUrl: config.APP.API_URL,
 
+  didInsertElement() {
+    this._super(...arguments);
+    this.loadImage();
+  },
+
   loadImage: function() {
-    const url = this.get('apiUrl') + '?query=' + this.get('searchQuery') + '&limit=5';
+    const url = this.get('apiUrl') + '?query=' + this.get('searchQuery');
     $.getJSON(url).then((images) => {
       bind(this, this.set('images', images));
     });
