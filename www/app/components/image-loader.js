@@ -6,7 +6,6 @@ import $ from 'jquery';
 
 export default Component.extend({
 
-  currentImage: '',
   searchQuery: '',
   apiUrl: config.APP.API_URL,
 
@@ -48,7 +47,7 @@ export default Component.extend({
   actions: {
     search: function() {
       const query = this.get('searchQuery');
-      this.set('query', query)
+      this.set('query', query);
       this.loadImage(query);
     }
   }

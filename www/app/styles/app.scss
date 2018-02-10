@@ -32,7 +32,10 @@ input, button {
 }
 
 button {
-  background: rgb(192, 192, 192);
+  background: rgb(128, 128, 228);
+  color: #fff;
+  cursor: pointer;
+  text-shadow: -1px 1px rgb(31, 31, 31);
 }
 
 .btn, .search {
