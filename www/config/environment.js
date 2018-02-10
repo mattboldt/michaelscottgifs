@@ -21,7 +21,25 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       API_URL: ''
-    }
+    },
+
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['development', 'production'],
+        config: {
+          id: 'UA-11539016-8',
+          // Use `analytics_debug.js` in development
+          debug: environment === 'development',
+          // Use verbose tracing of GA events
+          trace: environment === 'development',
+          // Ensure development env hits aren't sent to GA
+          sendHitTask: environment !== 'development',
+          // Specify Google Analytics plugins
+          require: ['ecommerce']
+        }
+      }
+    ]
   };
 
   if (environment === 'development') {
@@ -48,9 +66,6 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.APP.API_URL = 'https://nkmi8emuul.execute-api.us-east-1.amazonaws.com/prod/michaelscottgifs_MichaelScott';
-    ENV.googleAnalytics = {
-      webPropertyId: 'UA-11539016-8'
-    };
   }
 
   return ENV;
