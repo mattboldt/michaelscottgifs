@@ -1,6 +1,7 @@
-const fs = require('fs');
-      path = require('path');
+const fs = require('fs')
+      path = require('path')
       Search = require('search.js');
+      // ImageParse = require('imageParse.js');
 
 exports.handle = (e, context, callback) => {
   console.log('processing event: %j', e);
@@ -9,8 +10,27 @@ exports.handle = (e, context, callback) => {
     if (err) throw err;
     const json = JSON.parse(data);
     const params = e.queryStringParameters || {};
-    const search = new Search(json, params);
+    if (params.gif) {
+      params.limit = 1;
+    }
 
-    callback(null, search.getResults());
+    const search = new Search(json, params);
+    let result = search.getResults();
+
+    if (false) { //params.gif) {
+      const parser = new ImageParse(result[0]);
+      parser.toImage(callback);
+    } else {
+      callback(null, responseBody(result));
+    }
   });
+}
+
+const responseBody = (body) => {
+  return {
+    isBase64Encoded: false,
+    statusCode: 200,
+    headers: {'Access-Control-Allow-Origin': '*'},
+    body: JSON.stringify(body)
+  };
 }

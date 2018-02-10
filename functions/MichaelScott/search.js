@@ -1,5 +1,3 @@
-'use strict';
-
 const Fuse = require('fuse.js');
 
 module.exports = class Search {
@@ -32,16 +30,7 @@ module.exports = class Search {
     return [this.json[num]];
   }
 
-  responseBody(body){
-    return {
-      isBase64Encoded: false,
-      statusCode: 200,
-      headers: {'Access-Control-Allow-Origin': '*'},
-      body: JSON.stringify(body)
-    };
-  }
-
-  search(){
+  getResults(){
     let query = this.params.query || '';
     let limit = this.params.limit || 1;
     if (query.length === 0) {
@@ -59,10 +48,5 @@ module.exports = class Search {
       return this.randomImage;
     }
     return relevantResults.map((r) => r.item);
-  }
-
-  getResults(){
-    const results = this.search();
-    return this.responseBody(results);
   }
 }
