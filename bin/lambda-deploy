@@ -1,1 +1,2 @@
+json-minify ./functions/MichaelScott/index.json > ./functions/MichaelScott/index.json.min
 apex deploy

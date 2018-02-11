@@ -6,7 +6,7 @@ const Search = require('search.js');
 exports.handle = (e, context, callback) => {
   console.log('processing event: %j', e);
 
-  fs.readFile(__dirname + '/index.json', function (err, data) {
+  fs.readFile(__dirname + '/index.json.min', function (err, data) {
     if (err) throw err;
     const json = JSON.parse(data);
     const params = e.queryStringParameters || {};
