@@ -17,8 +17,8 @@ module.exports = class Search {
       maxPatternLength: 90,
       minMatchCharLength: 1,
       keys: [
-        'titles',
-        'tags'
+        { name: 'titles', weight: 0.3 },
+        { name: 'tags', weight: 0.2 }
       ]
     };
   }
