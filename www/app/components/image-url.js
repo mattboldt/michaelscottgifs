@@ -6,6 +6,7 @@ export default Component.extend({
   readonly: true,
   value: '',
   attributeBindings: ['value', 'readonly'],
+  classNames: ['image-url'],
   click(e) {
     e.preventDefault();
     $(this.get('element')).select();

@@ -12,7 +12,9 @@
 {{#each images as |image|}}
   <div class="row">
     <div class="col-12">
-      <img src={{image.url}} />
+      <video frameborder="0" autoplay loop>
+        <source src={{image.url}} type="video/mp4">
+      </video>
     </div>
   </div>
   <div class="row">

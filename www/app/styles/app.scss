@@ -9,6 +9,11 @@
 
 * {
   box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.image-url {
+  text-transform: none;
 }
 
 *::selection {
@@ -28,9 +33,11 @@ div {
   margin: 20px auto;
 }
 
-img {
-  border: black 1px solid;
-  box-shadow: rgb(31, 31, 31) -3px 3px 0 0;
+video {
+  display: block;
+  margin: auto;
+  max-width: 550px;
+  @extend %drop-shadow;
 }
 
 input, button {
@@ -60,13 +67,6 @@ button {
 
 button:focus, input:focus {
   outline: rgb(160, 160, 255) 2px solid;
-}
-
-img {
-  display: block;
-  margin: auto;
-  width: 100%;
-  max-width: 550px;
 }
 
 .image-tag {
