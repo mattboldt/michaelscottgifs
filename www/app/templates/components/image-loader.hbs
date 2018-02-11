@@ -1,9 +1,11 @@
+{{title pageTitle}}
+
 <div class="row">
   <div class="col-9">
     {{input value=searchQuery insert-newline="search" class="search" placeholder="Michael Scott Search"}}
   </div>
   <div class="col-3">
-    <button class="btn" {{action "search"}}>search</button>    
+    <button class="btn" {{action "search"}}>search</button>
   </div>
 </div>
 
@@ -21,4 +23,14 @@
   </div>
 {{/each}}
 
-{{title pageTitle}}
+{{#unless images}}
+  <div class="row">
+    <div class="col-12">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+  </div>
+{{/unless}}

@@ -44,6 +44,7 @@ export default Component.extend({
     search: function() {
       const query = this.get('searchQuery');
       this.set('query', query);
+      this.set('images', null);
       this.loadImage(query);
     }
   }

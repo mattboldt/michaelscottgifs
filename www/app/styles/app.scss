@@ -1,8 +1,19 @@
 @import 'reset';
 @import 'simple-grid';
+@import 'loading';
+
+%drop-shadow {
+  border: black 1px solid;
+  box-shadow: rgb(31, 31, 31) -3px 3px 0 0;
+}
 
 * {
   box-sizing: border-box;
+}
+
+*::selection {
+  background: rgb(128, 128, 228);
+  color: #fff;
 }
 
 body {
@@ -27,8 +38,13 @@ input, button {
   padding: 20px;
   background: #fff;
   font-family: 'Courier';
-  border: black 1px solid;
-  box-shadow: rgb(31, 31, 31) -3px 3px 0 0;
+  /* Remove First */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  background: transparent;
+  @extend %drop-shadow;
 }
 
 button {
@@ -53,12 +69,15 @@ img {
   max-width: 550px;
 }
 
-.image-tag{
+.image-tag {
+  display: inline-block;
   font-size: 10px;
-  background: #000;
+  padding: 5px 10px;
+  margin: 0 0 10px;
+  background: rgb(157, 157, 255);
   color: #fff;
-  border-radius: 3px;
-  padding: 5px;
+  text-shadow: -1px 1px rgba(0, 0, 0, 0.4);
+  @extend %drop-shadow;
 }
 
 small {
