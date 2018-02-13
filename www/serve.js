@@ -13,10 +13,7 @@ app.get('/api', function(req, res) {
   fs.readFile(path.resolve('.') + '/backend/index.json.min', function (err, data) {
     if (err) throw err;
     const json = JSON.parse(data);
-    const params = null || {};
-    if (params.gif) {
-      params.limit = 1;
-    }
+    const params = req.query || {};
     const search = new Search(json, params);
     let result = search.getResults();
 

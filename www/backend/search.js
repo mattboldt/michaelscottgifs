@@ -31,7 +31,7 @@ module.exports = class Search {
   }
 
   getResults(){
-    let query = this.params.query || '';
+    let query = this.params.q || '';
     let limit = this.params.limit || 1;
     if (query.length === 0) {
       return this.randomImage;

@@ -1,7 +1,31 @@
 import Route from '@ember/routing/route';
 import config from '../config/environment';
+import Ember from 'ember';
+import fetch from 'ember-fetch/ajax';
 
 export default Route.extend({
+  fastboot: Ember.inject.service(),
+
+  model(params) {
+    const shoebox = this.get('fastboot.shoebox');
+    let   shoeboxStore = shoebox.retrieve('my-store');
+    const isFastBoot = this.get('fastboot.isFastBoot');
+    const url = config.APP.API_URL + '?q=' + params.q;
+
+    if (isFastBoot) {
+      return fetch(url).then(function(response) {
+        if (!shoeboxStore) {
+          shoeboxStore = {};
+          shoebox.put('my-store', shoeboxStore);
+        }
+        shoeboxStore['images'] = response;
+        return response;
+      });
+    }
+
+    return shoeboxStore && shoeboxStore['images'];
+  },
+
   headTags: function() {
     const controller = this.controllerFor(this.routeName);
     const images = controller.get('images');

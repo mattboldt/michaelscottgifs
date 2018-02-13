@@ -12,17 +12,17 @@ module.exports = function(defaults) {
       css: {
         concat: true
       }
-    },
-    'asset-cache': {
-      include: [
-        'assets/**/*',
-        'ember-welcome-page/images/*'
-      ]
-    },
-    'esw-cache-fallback': {
-      patterns: [ '/' ],
-      version: '1' // Changing the version will bust the cache
     }
+    // 'asset-cache': {
+    //   include: [
+    //     'assets/**/*',
+    //     'ember-welcome-page/images/*'
+    //   ]
+    // },
+    // 'esw-cache-fallback': {
+    //   patterns: [ '/' ],
+    //   version: '1' // Changing the version will bust the cache
+    // }
   });
 
   // Use `app.import` to add additional libraries to the generated
