@@ -6,19 +6,7 @@ const Search = require('./backend/search.js');
 const ENV = process.env.NODE_ENV || 'development';
 const port = ENV === 'development' ? 4040 : 8080;
 
-const httpServer = new ExpressHTTPServer({
-  port: port,
-  gzip: true,
-  beforeMiddleware(app) {
-    app.use((request, response, next) => {
-      if (ENV === 'development' || request.headers['x-forwarded-proto'] === 'https') {
-        return next();
-      } else {
-        return response.redirect(301, `https://${request.hostname}${request.url}`);
-      }
-    });
-  }
-});
+const httpServer = new ExpressHTTPServer();
 const app = httpServer.app;
 
 app.get('/api', function(req, res) {
@@ -39,7 +27,17 @@ app.get('/api', function(req, res) {
 
 let server = new FastBootAppServer({
   httpServer: httpServer,
-  distPath: 'dist'
+  distPath: 'dist',
+  gzip: true,
+  beforeMiddleware(app) {
+    app.use((request, response, next) => {
+      if (ENV === 'development' || request.headers['x-forwarded-proto'] === 'https') {
+        return next();
+      } else {
+        return response.redirect(301, `https://${request.hostname}${request.url}`);
+      }
+    });
+  }
 });
 
 server.start();
