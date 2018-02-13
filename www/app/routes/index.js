@@ -28,7 +28,7 @@ export default Route.extend({
 
   headTags: function() {
     const controller = this.controllerFor(this.routeName);
-    const images = controller.get('images');
+    const images = controller.get('model');
     // value of head tags updates with value of `era` on this
     // route's controller
     if (images) {
