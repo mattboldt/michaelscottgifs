@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Search = require('./backend/search.js');
 const ENV = process.env.NODE_ENV || 'development';
-const port = ENV === 'development' ? 4040 : 80;
+const port = ENV === 'development' ? 4040 : 8080;
 
 const httpServer = new ExpressHTTPServer({
   port: port,
