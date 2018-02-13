@@ -45,12 +45,14 @@
     "ember-source": "~2.18.0",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "nodemon": "^1.14.12"
   },
   "engines": {
     "node": "6.* || >= 7.*"
   },
   "dependencies": {
-    "fastboot-app-server": "^1.1.0"
+    "fastboot-app-server": "^1.1.0",
+    "fuse.js": "^3.2.0"
   }
 }
