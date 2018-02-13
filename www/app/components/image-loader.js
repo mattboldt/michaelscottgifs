@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 import config from '../config/environment';
 import { bind } from '@ember/runloop';
-import $ from 'jquery';
+import fetch from 'ember-fetch/ajax';
 
 export default Component.extend({
 
@@ -31,7 +31,7 @@ export default Component.extend({
 
   loadImage: function() {
     const url = this.get('apiUrl') + '?query=' + this.get('searchQuery');
-    $.getJSON(url).then((images) => {
+    fetch(url).then((images) => {
       bind(this, this.setImages(images));
     });
   },
