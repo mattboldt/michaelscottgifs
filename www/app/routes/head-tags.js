@@ -4,12 +4,23 @@ export default class HeadTags {
   constructor(route, model) {
     return [
       {
-        type: 'meta',
+        type: 'script',
         tagId: 'meta-title',
         attrs: {
-          property: 'title',
-          content: model[0].titles[0]
-        }
+          type: 'application/ld+json'
+        },
+        content: `
+{
+"@context": "http://schema.org",
+"@type": "VideoObject",
+"name": "${model[0].titles[0]}",
+"description": "${model[0].tags.join(', ')}",
+"thumbnailUrl": [
+  "${model[0].url}"
+],
+"contentUrl": "${model[0].url}"
+}
+        `
       },
       {
         type: 'meta',
