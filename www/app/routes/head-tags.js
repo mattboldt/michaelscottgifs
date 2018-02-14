@@ -39,15 +39,15 @@ export default class HeadTags {
         type: 'meta',
         tagId: 'og-description',
         attrs: {
-          property: 'og:site_name”',
+          property: 'og:site_name',
           content: config.siteName
         }
       },
       {
         type: 'meta',
-        tagId: 'og-image”',
+        tagId: 'og-image',
         attrs: {
-          property: 'og:image”',
+          property: 'og:image',
           content: model[0].url
         }
       }
