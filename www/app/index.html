@@ -16,12 +16,18 @@
     <meta name="theme-color" content="#ffffff">
 
     {{content-for "head"}}
-    {{content-for "concat-css"}}
+
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/website.css">
+
     {{content-for "head-footer"}}
   </head>
   <body>
     {{content-for "body"}}
-    {{content-for "concat-js"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/website.js"></script>
+
     {{content-for "body-footer"}}
   </body>
 </html>

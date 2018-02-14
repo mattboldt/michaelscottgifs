@@ -5,9 +5,9 @@ import config from '../config/environment';
 export default Component.extend({
   searchQuery: '',
 
-  didInsertElement() {
+  init() {
     this._super(...arguments);
-    this.set('searchQuery', this.get('query'));
+    this.set('searchQuery', this.get('q'));
   },
 
   actions: {

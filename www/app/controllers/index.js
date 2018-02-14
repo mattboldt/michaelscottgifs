@@ -6,7 +6,6 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   headTagsService: service('head-tags'),
   queryParams: ['q'],
-  q: '',
 
   imagesObserver: observer('model', function() {
     this.get('headTagsService').collectHeadTags();
@@ -15,14 +14,5 @@ export default Controller.extend({
   pageTitle: computed('model', function() {
     const model = this.get('model');
     return !model ? 'index' : model[0].tags.join(' | ');
-  }),
-
-  pageImageUrl: computed('model', function() {
-    const model = this.get('model');
-    if (model) {
-      return model[0].url;
-    } else {
-      return '';
-    }
   })
 });

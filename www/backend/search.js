@@ -1,3 +1,6 @@
+/* global require */
+/* global module */
+
 const Fuse = require('fuse.js');
 
 module.exports = class Search {

@@ -1,11 +1,12 @@
+/* global require */
+/* global process */
+
 const FastBootAppServer = require('fastboot-app-server');
 const ExpressHTTPServer = require('fastboot-app-server/src/express-http-server');
 const fs = require('fs');
 const path = require('path');
-const Search = require('./backend/search.js');
+const Search = require('./search');
 const ENV = process.env.NODE_ENV || 'development';
-const port = ENV === 'development' ? 4040 : 8080;
-
 const httpServer = new ExpressHTTPServer();
 const app = httpServer.app;
 

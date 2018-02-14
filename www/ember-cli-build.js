@@ -4,25 +4,18 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
-    emberCliConcat: {
-      js: {
-        concat: true
-      },
-      css: {
-        concat: true
-      }
+    'ember-service-worker': {
+      versionStrategy: 'every-build'
+    },
+    'asset-cache': {
+      include: [
+        'assets/**/*',
+      ]
+    },
+    'esw-cache-fallback': {
+      patterns: ['/'],
+      version: '1.0.1' // Changing the version will bust the cache
     }
-    // 'asset-cache': {
-    //   include: [
-    //     'assets/**/*',
-    //     'ember-welcome-page/images/*'
-    //   ]
-    // },
-    // 'esw-cache-fallback': {
-    //   patterns: [ '/' ],
-    //   version: '1' // Changing the version will bust the cache
-    // }
   });
 
   // Use `app.import` to add additional libraries to the generated
