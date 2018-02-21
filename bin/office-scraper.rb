@@ -20,19 +20,30 @@ open('https://rawgit.com/raymondjavaxx/swearjar-node/master/lib/config/en_US.jso
 end
 
 SEASONS_WITH_MIKE.each do |season|
+  puts "season #{season[0]}"
+
   season[1].times do |episode|
-    digit = format('%02d', episode + 1)
+    ep = episode + 1
+    puts "episode #{ep}"
+
+    digit = format('%02d', ep)
     url = "http://officequotes.net/no#{season[0]}-#{digit}.php"
 
     begin
       doc = Nokogiri::HTML(open(url))
 
       doc.css('td div.quote').each do |div|
-        next if div.content.include?('Deleted Scene')
+        labels = div.css('b')
+        next if labels.any? { |l| l.include?('Deleted Scene') }
 
-        phrases = div.content.strip.encode('UTF-8', invalid: :replace).split(/\W+/)
-        phrases.each do |word|
-          words << word if swears.include?(word) || word.length > 5
+        labels.each do |label|
+          next unless label.content == 'Michael:'
+          c = label.next_sibling.content
+
+          phrases = c.strip.encode('UTF-8', invalid: :replace).split(/\W+/)
+          phrases.each do |word|
+            words << word if swears.include?(word) || word.length > 5
+          end
         end
       end
     rescue OpenURI::HTTPError => e
