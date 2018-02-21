@@ -17,5 +17,5 @@ def generate
     end
     words << word
   end
-  puts words.join('')
+  words.join('')
 end
