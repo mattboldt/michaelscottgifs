@@ -50,6 +50,11 @@ module.exports = class Search {
     if (results.length === 0 || relevantResults.length === 0) {
       return this.randomImage;
     }
+
+    relevantResults.forEach((r) => {
+      r.item['url'] = `https://michaelscottgifs.com/images/${r.item['name']}/i.mp4`;
+    });
+
     return relevantResults.map((r) => r.item);
   }
 }

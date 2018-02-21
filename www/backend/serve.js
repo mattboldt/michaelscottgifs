@@ -11,7 +11,7 @@ const httpServer = new ExpressHTTPServer();
 const app = httpServer.app;
 
 app.get('/api', function(req, res) {
-  fs.readFile(path.resolve('.') + '/backend/index.json.min', function (err, data) {
+  fs.readFile(path.resolve('.') + '/backend/index.json', function (err, data) {
     if (err) throw err;
     const json = JSON.parse(data);
     const params = req.query || {};
