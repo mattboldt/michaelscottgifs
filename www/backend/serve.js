@@ -5,21 +5,13 @@ const FastBootAppServer = require('fastboot-app-server');
 const ExpressHTTPServer = require('fastboot-app-server/src/express-http-server');
 const fs = require('fs');
 const path = require('path');
-const db = require('./db');
 const Search = require('./search');
 const ENV = process.env.NODE_ENV || 'development';
 const httpServer = new ExpressHTTPServer();
 const app = httpServer.app;
 
 app.get('/api', function(req, res) {
-  const conn = db.connect()
-  let models = {};
-
   fs.readFile(path.resolve('.') + '/backend/index.json.min', function (err, data) {
-    var model = conn.import(data);
-    console.log(model.name);
-    models[model.name] = model;
-
     if (err) throw err;
     const json = JSON.parse(data);
     const params = req.query || {};
@@ -29,13 +21,6 @@ app.get('/api', function(req, res) {
     res.set({'Access-Control-Allow-Origin': '*'})
     res.send(result);
   });
-
-  conn.then(() => {
-  }).catch(() => {
-    res.send('Unable to connect to the database:');
-  });
-
-
 });
 
 let server = new FastBootAppServer({
