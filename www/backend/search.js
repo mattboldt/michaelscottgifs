@@ -52,7 +52,7 @@ module.exports = class Search {
     }
 
     relevantResults.forEach((r) => {
-      r.item['url'] = `https://michaelscottgifs.com/images/${r.item['name']}/i.mp4`;
+      r.item['url'] = `https://i.michaelscottgifs.com/images/${r.item['name']}/i.mp4`;
     });
 
     return relevantResults.map((r) => r.item);
