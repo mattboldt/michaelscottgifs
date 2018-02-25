@@ -5,8 +5,8 @@ require 'json'
 require 'open-uri'
 require './filename-generator.rb'
 
-json = [] #JSON.parse(File.read('../www/backend/index.json'))
-raise 'you sure?'
+json = JSON.parse(File.read('../www/backend/index.json.old'))
+# raise 'you sure?'
 
 json.each do |image|
   filename = generate

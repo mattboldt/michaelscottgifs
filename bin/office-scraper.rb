@@ -42,7 +42,7 @@ SEASONS_WITH_MIKE.each do |season|
 
           phrases = c.strip.encode('UTF-8', invalid: :replace).split(/\W+/)
           phrases.each do |word|
-            words << word if swears.include?(word) || word.length > 5
+            words << word if swears.include?(word) || word.length > 2
           end
         end
       end
