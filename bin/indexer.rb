@@ -5,7 +5,7 @@ require 'json'
 require 'find'
 
 content = []
-dir = File.expand_path('..')
+dir = File.expand_path('.')
 
 Find.find("#{dir}/docs/images") do |path|
   next unless File.exist?("#{path}/i.json")
