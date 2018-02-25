@@ -1,51 +1,24 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import fetch from 'ember-fetch/ajax';
 import config from '../config/environment';
-import { bind } from '@ember/runloop';
-import $ from 'jquery';
 
 export default Component.extend({
-
   searchQuery: '',
-  apiUrl: config.APP.API_URL,
 
-  pageTitle: computed('images', function() {
-    const images = this.get('images');
-    return !images ? 'index' : images[0].tags.join(' | ');
-  }),
-
-  pageImageUrl: computed('images', function() {
-    const images = this.get('images');
-    if (images) {
-      return images[0].url;
-    } else {
-      return '';
-    }
-  }),
-
-  didInsertElement() {
+  init() {
     this._super(...arguments);
-    this.set('searchQuery', this.get('query'));
-    this.loadImage();
-  },
-
-  loadImage: function() {
-    const url = this.get('apiUrl') + '?query=' + this.get('searchQuery');
-    $.getJSON(url).then((images) => {
-      bind(this, this.setImages(images));
-    });
-  },
-
-  setImages(images) {
-    this.set('images', images);
+    this.set('searchQuery', this.get('q'));
   },
 
   actions: {
     search: function() {
       const query = this.get('searchQuery');
-      this.set('query', query);
-      this.set('images', null);
-      this.loadImage(query);
+      this.set('q', query);
+
+      const url = config.APP.API_URL + '?q=' + query;
+      fetch(url).then((response) => {
+        this.set('model', response);
+      });
     }
   }
 });

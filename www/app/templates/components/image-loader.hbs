@@ -1,5 +1,3 @@
-{{title pageTitle}}
-
 <div class="row">
   <div class="col-9">
     {{input
@@ -7,6 +5,7 @@
       insert-newline="search"
       class="search"
       placeholder="Michael Scott Search"
+      name="search-bar"
       autofocus=true}}
   </div>
   <div class="col-3">
@@ -14,7 +13,7 @@
   </div>
 </div>
 
-{{#each images as |image|}}
+{{#each model as |image|}}
   <div class="row">
     <div class="col-12">
       <video frameborder="0" autoplay loop>
@@ -30,7 +29,7 @@
   </div>
 {{/each}}
 
-{{#unless images}}
+{{#unless model}}
   <div class="row">
     <div class="col-12">
       <div class="spinner">

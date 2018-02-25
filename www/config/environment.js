@@ -50,7 +50,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.API_URL = 'http://localhost:3000';
+    ENV.APP.API_URL = 'http://localhost:3000/api';
   }
 
   if (environment === 'test') {
@@ -67,7 +67,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.APP.API_URL = 'https://nkmi8emuul.execute-api.us-east-1.amazonaws.com/prod/michaelscottgifs_MichaelScott';
+    ENV.APP.API_URL = 'https://michaelscottgifs.herokuapp.com/api';
   }
 
   return ENV;
