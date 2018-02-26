@@ -30,7 +30,10 @@ module.exports = class Search {
     const min = 0;
     const max = this.json.length - 1;
     const num = Math.floor(Math.random() * max) + min;
-    return [this.json[num]];
+
+    let img = this.json[num];
+    img['url'] = `https://i.michaelscottgifs.com/images/${img['name']}/i.mp4`;
+    return [img];
   }
 
   getResults(){
