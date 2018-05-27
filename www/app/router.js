@@ -15,16 +15,14 @@ const Router = EmberRouter.extend({
   },
 
   _trackPage() {
-    scheduleOnce('afterRender', this, () => {
+    Ember.run.once(this, () => {
       const page = this.get('url');
       const title = this.getWithDefault('currentRouteName', 'unknown');
 
-      get(this, 'metrics').trackPage({ page, title });
+      get(this, 'metrics').trackPage('GoogleAnalytics', { title: title });
     });
   }
 });
 
-Router.map(function() {
+export default Router.map(function() {
 });
-
-export default Router;
