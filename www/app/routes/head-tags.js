@@ -65,21 +65,21 @@ export default class HeadTags {
       {
         type: 'meta',
         attrs: {
-          property: 'twitter:card',
+          name: 'twitter:card',
           content: 'summary'
         }
       },
       {
         type: 'meta',
         attrs: {
-          property: 'twitter:site',
+          name: 'twitter:site',
           content: '@atmattb'
         }
       },
       {
         type: 'meta',
         attrs: {
-          property: 'twitter:creator',
+          name: 'twitter:creator',
           content: '@atmattb'
         }
       }
