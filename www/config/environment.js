@@ -67,7 +67,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.APP.API_URL = 'https://michaelscottgifs.herokuapp.com/api';
+    ENV.APP.API_URL = '/api';
   }
 
   return ENV;
