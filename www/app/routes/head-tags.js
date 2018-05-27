@@ -61,6 +61,27 @@ export default class HeadTags {
           property: 'og:image',
           content: model[0].url
         }
+      },
+      {
+        type: 'meta',
+        attrs: {
+          property: 'twitter:card',
+          content: 'summary'
+        }
+      },
+      {
+        type: 'meta',
+        attrs: {
+          property: 'twitter:site',
+          content: '@atmattb'
+        }
+      },
+      {
+        type: 'meta',
+        attrs: {
+          property: 'twitter:creator',
+          content: '@atmattb'
+        }
       }
     ]
   }
