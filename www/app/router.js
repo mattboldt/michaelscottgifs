@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
   metrics: service(),
+  fastboot: service(),
 
   didTransition() {
     this._super(...arguments);
@@ -15,12 +16,16 @@ const Router = EmberRouter.extend({
   },
 
   _trackPage() {
-    Ember.run.once(this, () => {
-      const page = this.get('url');
-      const title = this.getWithDefault('currentRouteName', 'unknown');
+    const isFastBoot = this.get('fastboot.isFastBoot');
 
-      get(this, 'metrics').trackPage('GoogleAnalytics', { title: title });
-    });
+    if (!isFastBoot) {
+      Ember.run.once(this, () => {
+        const page = this.get('url');
+        const title = this.getWithDefault('currentRouteName', 'unknown');
+
+        get(this, 'metrics').trackPage('GoogleAnalytics', { title: title });
+      });
+    }
   }
 });
 
